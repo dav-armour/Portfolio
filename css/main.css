@@ -132,8 +132,8 @@ nav #nav-list li a:hover {
   /* cell number */
 }
 #projects .carousel-cell {
-  width: 66%;
-  height: 100%;
+  width: 80%;
+  height: 75vh;
   margin-right: 10px;
   background: #8C8;
   border-radius: 5px;
@@ -180,7 +180,7 @@ nav #nav-list li a:hover {
 
 @media (min-width: 600px) {
   h2 {
-    margin-top: 80px;
+    margin-top: 60px;
     text-align: center;
   }
 

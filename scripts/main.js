@@ -19,8 +19,17 @@ $(function() {
       });
     };
   });
+
+  $('#project-carousel').flickity({
+    // options
+    wrapAround: true,
+    groupCells: true
+    // cellAlign: 'left',
+    // contain: true
+  });
+
 });
 
-  particlesJS.load('particles-js', 'https://api.myjson.com/bins/1c12jw', function() {
+particlesJS.load('particles-js', 'https://api.myjson.com/bins/1c12jw', function() {
   console.log('callback - particles.js config loaded');
 });
