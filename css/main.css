@@ -77,6 +77,9 @@ nav #nav-list li a {
   text-decoration: none;
   color: #45A29E;
 }
+nav #nav-list li a:hover {
+  color: #66FCF1;
+}
 
 #hero {
   background-color: #0B0C10;
@@ -177,7 +180,7 @@ nav #nav-list li a {
 
 @media (min-width: 600px) {
   h2 {
-    margin-top: 40px;
+    margin-top: 80px;
     text-align: center;
   }
 
@@ -196,7 +199,7 @@ nav #nav-list li a {
     display: none;
   }
   nav #nav-list {
-    background: none;
+    background-color: #0B0C10;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
