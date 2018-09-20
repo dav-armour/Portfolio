@@ -23,7 +23,7 @@ $(function() {
   $('#project-carousel').flickity({
     // options
     wrapAround: true,
-    groupCells: true
+    // groupCells: true
     // cellAlign: 'left',
     // contain: true
   });
