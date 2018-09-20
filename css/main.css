@@ -12,6 +12,7 @@ section {
 
 h2 {
   color: #45A29E;
+  margin-bottom: 1rem;
 }
 
 nav {
@@ -72,8 +73,12 @@ nav #nav-list li {
   list-style: none;
 }
 nav #nav-list li a {
+  font-size: 1.5rem;
   text-decoration: none;
   color: #45A29E;
+}
+nav #nav-list li a:hover {
+  color: #66FCF1;
 }
 
 #hero {
@@ -123,6 +128,26 @@ nav #nav-list li a {
   width: 60%;
 }
 
+#projects {
+  /* cell number */
+}
+#projects .carousel-cell {
+  width: 80%;
+  height: 75vh;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+}
+#projects .carousel-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(carousel-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+
 #contact {
   background-color: #0B0C10;
 }
@@ -155,9 +180,12 @@ nav #nav-list li a {
 
 @media (min-width: 600px) {
   h2 {
-    position: relative;
-    top: 40px;
+    margin-top: 60px;
     text-align: center;
+  }
+
+  #about h2 {
+    align-self: center;
   }
 
   nav {
@@ -171,7 +199,7 @@ nav #nav-list li a {
     display: none;
   }
   nav #nav-list {
-    background: none;
+    background-color: #0B0C10;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
