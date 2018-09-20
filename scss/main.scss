@@ -20,6 +20,7 @@ section {
 
 h2 {
   color: $dblue;
+  margin-bottom: 1rem;
 }
 
 nav {
@@ -92,6 +93,7 @@ nav {
       list-style: none;
 
       a {
+        font-size: 1.5rem;
         text-decoration: none;
         color: $dblue;
       }
@@ -156,6 +158,24 @@ nav {
 
 #projects {
   // background-color: $lgrey;
+  .carousel-cell {
+    width: 66%;
+    height: 100%;
+    margin-right: 10px;
+    background: #8C8;
+    border-radius: 5px;
+    counter-increment: carousel-cell;
+  }
+
+  /* cell number */
+  .carousel-cell:before {
+    display: block;
+    text-align: center;
+    content: counter(carousel-cell);
+    line-height: 200px;
+    font-size: 80px;
+    color: white;
+  }
 }
 
 #skills {
@@ -202,9 +222,12 @@ nav {
 
 @media (min-width: 600px) {
   h2 {
-    position: relative;
-    top: 40px;
+    margin-top: 40px;
     text-align: center;
+  }
+
+  #about h2 {
+    align-self: center;
   }
 
   nav {
