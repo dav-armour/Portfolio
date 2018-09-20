@@ -10,17 +10,34 @@ $dgrey: #0B0C10;
   padding: 0;
 }
 
+section {
+  // min-height: 400px;
+  background-color: $mgrey;
+  height: calc(100vh - 40px);
+  padding: 20px;
+  border-bottom: 5px solid $dgrey;
+}
+
+h2 {
+  color: $dblue;
+}
+
 nav {
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
+  z-index: 98;
 
   #hamburger {
     position: fixed;
     top: 1em;
     right: 1em;
     cursor: pointer;
+
+    &:hover span {
+      background-color: $lblue;
+    }
 
     span {
       display: block;
@@ -82,31 +99,23 @@ nav {
   }
 }
 
-section {
-  // min-height: 400px;
-  height: 100vh;
-}
-
-h2 {
-  color: $dblue;
-}
-
-.hero {
+#hero {
   background-color: $dgrey;
+  border-bottom: none;
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
 
   #particles-js {
-    grid-area: 1 / 1 / 4 / 4;
+    grid-area: 1 / 1 / -1 / -1;
   }
 
   .title {
     grid-area: 2 / 2 / 3 / 3;
     align-self: center;
     text-align: center;
-    z-index: 2;
+    z-index: 1;
 
     h1 {
       color: $lblue;
@@ -121,23 +130,83 @@ h2 {
   }
 }
 
-.about {
-  background-color: $mgrey;
+#about {
+  // background-color: $mgrey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  h2 {
+    align-self: flex-start;
+    justify-self: flex-start;
+  }
+
+  img {
+    border: 5px solid $dgrey;
+    border-radius: 50%;
+    height: 30vh;
+  }
+
+  p {
+    color: $lgrey;
+    width: 60%;
+  }
 }
 
-.projects {
-  background-color: $lgrey;
+#projects {
+  // background-color: $lgrey;
 }
 
-.skills {
-  background-color: $mgrey;
+#skills {
+  // background-color: $mgrey;
 }
 
-.contact {
+#contact {
   background-color: $dgrey;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+
+    li {
+      display: inline-block;
+
+      a i {
+        font-size: 3rem;
+        color: $dblue;
+
+        &:link {
+          color: $dblue;
+        }
+
+        &:visited {
+          color: $dblue;
+        }
+
+        &:hover {
+          color: $lblue;
+        }
+      }
+    }
+  }
 }
 
-@media (min-width: 650px) {
+@media (min-width: 600px) {
+  h2 {
+    position: relative;
+    top: 40px;
+    text-align: center;
+  }
+
   nav {
     display: block;
     width: 100%;
@@ -150,6 +219,7 @@ h2 {
     }
 
     #nav-list {
+      background: none;
       display: flex;
       flex-direction: row;
       justify-content: flex-end;
@@ -162,9 +232,13 @@ h2 {
     }
   }
 
-  .hero {
-    h1 span {
-      display: inline;
+  #hero .title h1 span {
+    display: inline;
+  }
+
+  #contact {
+    ul {
+      flex-direction: row;
     }
   }
 }

@@ -6,9 +6,15 @@
   <title>David Armour Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Jquery -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <!-- Particles Background -->
   <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
+  <!-- Flickity Carousel -->
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
   <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
   <script src="scripts/main.js"></script>
@@ -21,31 +27,41 @@
       <span></span>
     </div>
     <ul id="nav-list">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">Skills</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
-  <section class="hero">
+  <section id="hero">
     <div id="particles-js"></div>
     <div class="title">
       <h1><span>David</span><span> Armour </span></h1>
       <h2>Web Developer</h2>
     </div>
+    <!-- <div class="scroll-down"></div> -->
   </section>
-  <section class="about">
+  <section id="about">
     <h2>About Me</h2>
+    <img src="images/headshot.jpg" alt="Headshot picture of David Armour" />
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda accusantium rerum repellat cumque quibusdam ex odit possimus aperiam, illo vel repellendus similique vitae culpa! Optio asperiores eum tempora ratione veritatis.</p>
   </section>
-  <section class="projects">
+  <section id="projects">
     <h2>Projects</h2>
   </section>
-  <section class="skills">
+  <section id="skills">
     <h2>Skills</h2>
   </section>
-  <section class="contact">
-    <h2>Contact Me</h2>
+  <section id="contact">
+    <h2>Contact</h2>
+    <ul>
+      <li><a href="mailto:dav.armour@gmail.com"><i class="fas fa-envelope-square"></i></a></li>
+      <li><a href="https://www.linkedin.com/in/david-armour-860b56165"><i class="fab fa-linkedin"></i></a></li>
+      <li><a href="https://github.com/dav-armour"><i class="fab fa-github-square"></i></a></li>
+      <li><a href="https://medium.com/@dav.armour"><i class="fab fa-medium"></i></a></li>
+      <li><a href="https://twitter.com/DavArmour"><i class="fab fa-twitter-square"></i></a></li>
+    </ul>
   </section>
 </body>
 </html>
