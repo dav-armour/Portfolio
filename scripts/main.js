@@ -28,6 +28,8 @@ $(function() {
     // contain: true
   });
 
+  new ClipboardJS('#email-button');
+
 });
 
 particlesJS.load('particles-js', 'https://api.myjson.com/bins/1c12jw', function() {
