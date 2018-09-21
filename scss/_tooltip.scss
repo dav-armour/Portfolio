@@ -1,0 +1,61 @@
+/* Tooltip styles */
+[tooltip] {
+  position: relative;
+  display: inline-block;
+}
+
+[tooltip]:before {
+  content: "";
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  border-width: 10px 10px 0 10px;
+  border-style: solid;
+  z-index: 99;
+  opacity: 0;
+  border-color: $lgrey transparent transparent;
+  transform: translateX(-50%) translatey(0%) rotate(-180deg);
+}
+
+[tooltip].success:before {
+  border-color: $lgrey transparent transparent;
+}
+
+[tooltip].fail:before {
+  border-color: $lgrey transparent transparent;
+}
+
+[tooltip]:after {
+  content: attr(tooltip);
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  background-color: $mgrey;
+  text-align: center;
+  color: $lgrey;
+  padding: 15px;
+  font-size: 10px;
+  font-size: 1rem;
+  min-width: 120px;
+  border-radius: 5px;
+  pointer-events: none;
+  z-index: 99;
+  opacity: 0;
+  margin-top: 10px;
+  transform: translateX(-50%) translateY(0%);
+  text-rendering: optimizeLegibility;
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+  text-indent: 0;
+  line-height: 1.3em;
+  text-transform: none;
+}
+
+[tooltip].success:after {
+  color: $lblue;
+}
+
+[tooltip]:hover:after, [tooltip]:hover:before {
+  opacity: 1;
+}
