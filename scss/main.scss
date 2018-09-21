@@ -3,7 +3,11 @@ $dblue: #45A29E;
 $lgrey: #C5C6C7;
 $mgrey: #1F2833;
 $dgrey: #0B0C10;
+$dgrey-border: rgba(12, 12, 16, .65);
+$shadow: 5px 5px 5px $dgrey;
 
+// @import url('https://fonts.googleapis.com/css?family=Capriola|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Capriola|Lobster|Playfair+Display:400,700|Roboto');
 
 * {
   margin: 0;
@@ -15,12 +19,43 @@ section {
   background-color: $mgrey;
   height: calc(100vh - 40px);
   padding: 20px;
-  border-bottom: 5px solid $dgrey;
+  border-bottom: 5px solid $dgrey-border;
+}
+
+h1 {
+  color: $lblue;
+  font-family: 'Playfair Display', serif;
+  line-height: 3rem;
 }
 
 h2 {
   color: $lblue;
   margin-bottom: 1rem;
+  font-family: 'Capriola', sans-serif;
+  text-shadow: 5px 5px 5px $dgrey;
+}
+
+h3 {
+  color: $dblue;
+  font-family: 'Capriola', sans-serif;
+  text-shadow: 4px 4px 5px $dgrey;
+}
+
+p, a, li {
+  font-family: 'Roboto', sans-serif;
+}
+
+p, li {
+  line-height: 1.4rem;
+}
+
+a {
+  text-decoration: none;
+  color: $dblue;
+
+  &:hover {
+    color: $lblue;
+  }
 }
 
 nav {
@@ -94,12 +129,6 @@ nav {
 
       a {
         font-size: 1.5rem;
-        text-decoration: none;
-        color: $dblue;
-
-        &:hover {
-          color: $lblue;
-        }
       }
     }
   }
@@ -110,7 +139,7 @@ nav {
   border-bottom: none;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 3fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
 
   #particles-js {
@@ -124,7 +153,6 @@ nav {
     z-index: 1;
 
     h1 {
-      color: $lblue;
       font-size: 3rem;
       margin-bottom: 5px;
 
@@ -135,6 +163,8 @@ nav {
     }
 
     h2 {
+      margin-top: 1rem;
+      font-size: 1.2rem;
       color: $dblue;
     }
   }
@@ -153,7 +183,7 @@ nav {
   }
 
   img {
-    border: 5px solid $dgrey;
+    border: 3px solid $dgrey-border;
     border-radius: 50%;
     height: 30vh;
   }
@@ -166,23 +196,23 @@ nav {
 
 #projects {
   .carousel-cell {
-    width: 80%;
+    width: 75%;
     height: 75vh;
     margin-right: 10px;
     padding: 2rem;
-    border: 4px solid $dgrey;
+    border: 4px solid $dgrey-border;
     border-radius: 10px;
-    // box-shadow: 0 0 5px 5px $dgrey;
+    // box-shadow: 2px 2px 0.2px 0.2px $lblue;
     background: $mgrey;
     color: $lgrey;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 
     h3 {
       color: $dblue;
-      margin-bottom: auto;
+      margin-bottom: 1rem;
     }
 
     a.button {
@@ -192,8 +222,9 @@ nav {
       color: $dgrey;
       padding: 1px 10px;
       font-size: 2rem;
-      border: 2px solid $dgrey;
+      border: 2px solid $dgrey-border;
       border-radius: 10px;
+      box-shadow: $shadow;
 
       &:hover {
         background-color: $lblue;
@@ -202,14 +233,21 @@ nav {
 
     img {
       margin-top: auto;
-      width: 100%;
-      max-width: 400px;
+      max-width: 100%;
+      height: 40%;
+      box-shadow: $shadow;
+      border-radius: 3px;
     }
   }
 }
 
 #skills {
   // background-color: $mgrey;
+  ul {
+    li {
+      color: $lgrey;
+    }
+  }
 }
 
 #contact {
@@ -230,7 +268,8 @@ nav {
     li {
       display: inline-block;
 
-      a i {
+      a i, span i {
+        cursor: pointer;
         font-size: 3rem;
         color: $dblue;
 
