@@ -1,14 +1,14 @@
-$lblue: #66FCF1;
-$dblue: #45A29E;
-$lgrey: #C5C6C7;
-$mgrey: #1F2833;
-$dgrey: #0B0C10;
-$dgrey-border: rgba(12, 12, 16, .65);
+$lblue: #66fcf1;
+$dblue: #45a29e;
+$lgrey: #c5c6c7;
+$mgrey: #1f2833;
+$dgrey: #0b0c10;
+$dgrey-border: rgba(12, 12, 16, 0.65);
 $shadow: 5px 5px 5px $dgrey;
 
 @import 'tooltip';
 @import 'flickity';
-@import url('https://fonts.googleapis.com/css?family=Capriola|Playfair+Display:400,700|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Capriola|Playfair+Display:400|Roboto');
 
 * {
   margin: 0;
@@ -24,11 +24,10 @@ body {
 }
 
 section {
-  scroll-snap-align: start;
-  // scroll-snap-align: center;
-  // min-height: 400px;
   background-color: $mgrey;
-  height: calc(100vh - 40px);
+  // Texture background
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%2345A29E' fill-opacity='0.15' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  height: 100%;
   padding: 20px;
   border-bottom: 5px solid $dgrey-border;
 }
@@ -52,11 +51,15 @@ h3 {
   text-shadow: 4px 4px 5px $dgrey;
 }
 
-p, a, li {
+p,
+a,
+li {
   font-family: 'Roboto', sans-serif;
 }
 
-p, li {
+p,
+li {
+  font-size: 0.8rem;
   line-height: 1.3rem;
 }
 
@@ -69,6 +72,7 @@ a {
   }
 }
 
+// Used to fade in menu
 @keyframes fadeInFromNone {
   0% {
     display: none;
@@ -112,15 +116,16 @@ nav {
       border-radius: 3px;
       z-index: 99;
 
-      transform-origin: 4px 0px;
+      transform-origin: 4px;
 
-      transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-      background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+      background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
       opacity 0.55s ease;
 
       &:nth-of-type(1) {
         transform-origin: 0% 0%;
       }
+
       &:nth-of-type(3) {
         transform-origin: 0% 100%;
       }
@@ -130,10 +135,12 @@ nav {
       span:nth-of-type(1) {
         transform: rotate(45deg) translate(-4px, -1px);
       }
+
       span:nth-of-type(2) {
         opacity: 0;
         transform: scale(0.2, 0.2);
       }
+
       span:nth-of-type(3) {
         transform: rotate(-45deg) translate(-2px, -1px);
       }
@@ -143,10 +150,11 @@ nav {
   #nav-list {
     display: none;
     opacity: 0;
-    background-color: #fff;
+    background-color: $lgrey;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    height: 100%;
     height: 100vh;
     // transition: opacity 2s ease-in-out;
     animation: fadeInFromNone 0.3s ease-in-out;
@@ -168,7 +176,7 @@ nav {
 
 #hero {
   background-color: $dgrey;
-  border-bottom: none;
+  border-bottom: 0;
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
@@ -216,7 +224,7 @@ nav {
     border: 3px solid $dgrey-border;
     border-radius: 50%;
     height: 30vh;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 
   p {
@@ -226,6 +234,7 @@ nav {
 }
 
 #projects {
+  padding-bottom: 35px;
   .carousel-cell {
     width: 75%;
     height: 70vh;
@@ -233,7 +242,6 @@ nav {
     padding: 1rem 2rem 1.5rem;
     border: 4px solid $dgrey-border;
     border-radius: 10px;
-    // box-shadow: 2px 2px 0.2px 0.2px $lblue;
     background: $mgrey;
     color: $lgrey;
     display: flex;
@@ -248,7 +256,7 @@ nav {
     }
 
     a.button {
-      margin-top: 0.8rem;
+      margin-top: 0.5rem;
       text-decoration: none;
       background-color: $dblue;
       color: $dgrey;
@@ -277,12 +285,14 @@ nav {
   h3 {
     margin-bottom: 0.5rem;
   }
+
   ul {
     margin-left: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+
     li {
       color: $lgrey;
-      line-height: 1.5rem;
+      line-height: 1.4rem;
     }
   }
 }
@@ -301,11 +311,12 @@ nav {
     justify-content: space-around;
     align-items: center;
 
-
     li {
       display: inline-block;
+      margin-bottom: 1rem;
 
-      a i, span i {
+      a i,
+      span i {
         cursor: pointer;
         font-size: 3rem;
         color: $dblue;
@@ -326,14 +337,54 @@ nav {
   }
 }
 
-@media (min-width: 800px) {
+@media (min-height: 550px) {
+  section {
+    height: calc(100vh - 40px);
+    scroll-snap-align: start;
+  }
+
+  #projects {
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width: 600px) {
+  p,
+  li {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 700px) {
   h2 {
-    margin-top: 50px;
     text-align: center;
   }
 
   #about h2 {
     align-self: center;
+  }
+}
+
+// @media (min-height: 700px) {
+//   h2 {
+//     font-size: 1.8rem;
+//   }
+
+//   h3 {
+//     font-size: 1.4rem;
+//   }
+
+//   p,
+//   li {
+//     font-size: 1.2rem;
+//     line-height: 2rem;
+//   }
+// }
+
+
+@media (min-width: 1000px) {
+  h2 {
+    margin-top: 50px;
   }
 
   nav {
@@ -349,8 +400,8 @@ nav {
 
     #nav-list {
       background-color: $dgrey;
-      display: flex !important;
-      opacity: 1 !important;
+      display: flex;
+      opacity: 1;
       flex-direction: row;
       justify-content: flex-end;
       align-items: flex-start;
@@ -373,16 +424,32 @@ nav {
   }
 }
 
-@media (max-height: 600px) {
-  #projects .carousel-cell {
-
-    h3 {
-      color: $dblue;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 0.8rem;
-    }
+// Disable hover effects for touch devices
+html.can-touch {
+  a:hover {
+    color: $dblue;
   }
+
+  #hamburger:hover span,
+  #projects a.button:hover {
+    background-color: $dblue;
+  }
+
+  .flickity-button:hover {
+      background: transparent;
+    }
 }
+
+// @media (max-height: 600px) {
+//   #projects .carousel-cell {
+
+//     h3 {
+//       color: $dblue;
+//       margin-bottom: 1rem;
+//     }
+
+//     p {
+//       font-size: 0.8rem;
+//     }
+//   }
+// }
