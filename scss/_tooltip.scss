@@ -1,7 +1,7 @@
 /* Tooltip styles */
 [tooltip] {
   position: relative;
-  display: inline-block;
+  // display: inline-block;
 }
 
 [tooltip]:before {
@@ -14,14 +14,10 @@
   z-index: 99;
   opacity: 0;
   border-color: $lgrey transparent transparent;
-  transform: translateX(-50%) translatey(0%) rotate(-180deg);
+  transform: translateX(-50%) rotate(-180deg);
 }
 
 [tooltip].success:before {
-  border-color: $lgrey transparent transparent;
-}
-
-[tooltip].fail:before {
   border-color: $lgrey transparent transparent;
 }
 
@@ -33,7 +29,7 @@
   background-color: $mgrey;
   text-align: center;
   color: $lgrey;
-  padding: 15px;
+  padding: 10px 15px;
   font-size: 10px;
   font-size: 1rem;
   min-width: 120px;
@@ -42,14 +38,10 @@
   z-index: 99;
   opacity: 0;
   margin-top: 10px;
-  transform: translateX(-50%) translateY(0%);
+  transform: translateX(-50%);
   text-rendering: optimizeLegibility;
-  -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
   text-indent: 0;
   line-height: 1.3em;
-  text-transform: none;
 }
 
 [tooltip].success:after {

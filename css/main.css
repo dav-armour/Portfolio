@@ -1,8 +1,7 @@
 /* Tooltip styles */
 @import url("https://fonts.googleapis.com/css?family=Capriola|Playfair+Display:400,700|Roboto");
 [tooltip] {
-  position: relative;
-  display: inline-block; }
+  position: relative; }
 
 [tooltip]:before {
   content: "";
@@ -14,12 +13,9 @@
   z-index: 99;
   opacity: 0;
   border-color: #C5C6C7 transparent transparent;
-  transform: translateX(-50%) translatey(0%) rotate(-180deg); }
+  transform: translateX(-50%) rotate(-180deg); }
 
 [tooltip].success:before {
-  border-color: #C5C6C7 transparent transparent; }
-
-[tooltip].fail:before {
   border-color: #C5C6C7 transparent transparent; }
 
 [tooltip]:after {
@@ -30,7 +26,7 @@
   background-color: #1F2833;
   text-align: center;
   color: #C5C6C7;
-  padding: 15px;
+  padding: 10px 15px;
   font-size: 10px;
   font-size: 1rem;
   min-width: 120px;
@@ -39,20 +35,52 @@
   z-index: 99;
   opacity: 0;
   margin-top: 10px;
-  transform: translateX(-50%) translateY(0%);
+  transform: translateX(-50%);
   text-rendering: optimizeLegibility;
-  -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
   text-indent: 0;
-  line-height: 1.3em;
-  text-transform: none; }
+  line-height: 1.3em; }
 
 [tooltip].success:after {
   color: #66FCF1; }
 
 [tooltip]:hover:after, [tooltip]:hover:before {
   opacity: 1; }
+
+/* smaller, dark, rounded square */
+.flickity-button {
+  background: transparent; }
+
+.flickity-button:hover {
+  background: #45A29E; }
+
+.flickity-prev-next-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px; }
+
+/* icon color */
+.flickity-button-icon {
+  fill: #C5C6C7; }
+
+/* position outside */
+.flickity-prev-next-button.previous {
+  left: -15px; }
+
+.flickity-prev-next-button.next {
+  right: -15px; }
+
+/* position dots in carousel */
+/* white circles */
+.flickity-page-dots .dot {
+  width: 8px;
+  height: 8px;
+  opacity: 1;
+  background: transparent;
+  border: 2px solid #C5C6C7; }
+
+/* fill-in selected dot */
+.flickity-page-dots .dot.is-selected {
+  background: #C5C6C7; }
 
 * {
   margin: 0;
@@ -62,10 +90,10 @@ html {
   scroll-behavior: smooth; }
 
 body {
-  scroll-snap-type: y mandatory; }
+  scroll-snap-type: y proximity; }
 
 section {
-  scroll-snap-align: center;
+  scroll-snap-align: start;
   background-color: #1F2833;
   height: calc(100vh - 40px);
   padding: 20px;
@@ -219,7 +247,7 @@ nav {
     color: #45A29E;
     margin-bottom: 1rem; }
   #projects .carousel-cell a.button {
-    margin-top: 0.5rem;
+    margin-top: 0.8rem;
     text-decoration: none;
     background-color: #45A29E;
     color: #0B0C10;
@@ -287,7 +315,8 @@ nav {
       display: none; }
     nav #nav-list {
       background-color: #0B0C10;
-      display: flex;
+      display: flex !important;
+      opacity: 1 !important;
       flex-direction: row;
       justify-content: flex-end;
       align-items: flex-start;
@@ -301,6 +330,9 @@ nav {
   #contact ul {
     flex-direction: row; } }
 @media (max-height: 600px) {
+  #projects .carousel-cell h3 {
+    color: #45A29E;
+    margin-bottom: 1rem; }
   #projects .carousel-cell p {
     font-size: 0.8rem; } }
 

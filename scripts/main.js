@@ -10,16 +10,7 @@ $(function() {
   $("#nav-list a").on('click', function(event) {
     $("#nav-list").toggleClass('open');
     $("#hamburger").toggleClass('open');
-    $("#email-box").toggle();
-    // if (this.hash !== "") {
-    //   event.preventDefault();
-    //   var hash = this.hash;
-    //   $('html, body').animate({
-    //     scrollTop: $(hash).offset().top
-    //   }, 800, function(){
-    //     window.location.hash = hash;
-    //   });
-    // };
+    $("#email-box").show();
   });
 
   $('#project-carousel').flickity({
@@ -33,13 +24,8 @@ $(function() {
   clipboard = new ClipboardJS('#email-button');
 
   clipboard.on('success', function(e) {
-    $('#email-tooltip').attr('tooltip', 'Succesfully copied!');
+    $('#email-tooltip').attr('tooltip', 'Copied to clipboard!');
     $('#email-tooltip').addClass('success');
-
-    console.info('Action:', e.action);
-    console.info('Text:', e.text);
-    console.info('Trigger:', e.trigger);
-
     e.clearSelection();
   });
 
