@@ -14,7 +14,16 @@ $shadow: 5px 5px 5px $dgrey;
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-snap-type: y mandatory;
+}
+
 section {
+  scroll-snap-align: center;
   // min-height: 400px;
   background-color: $mgrey;
   height: calc(100vh - 40px);

@@ -58,7 +58,14 @@
   margin: 0;
   padding: 0; }
 
+html {
+  scroll-behavior: smooth; }
+
+body {
+  scroll-snap-type: y mandatory; }
+
 section {
+  scroll-snap-align: center;
   background-color: #1F2833;
   height: calc(100vh - 40px);
   padding: 20px;
