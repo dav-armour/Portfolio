@@ -1,5 +1,5 @@
 /* Tooltip styles */
-@import url("https://fonts.googleapis.com/css?family=Capriola|Playfair+Display:400|Roboto");
+@import url("https://fonts.googleapis.com/css?family=Capriola|Playfair+Display:400|Roboto:300,400");
 [tooltip] {
   position: relative; }
 
@@ -86,7 +86,9 @@ section {
   background-color: #1f2833;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%2345A29E' fill-opacity='0.15' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
   height: 100%;
-  width: 300px;
+  min-height: 550px;
+  min-width: 300px;
+  width: calc(100% - 40px);
   padding: 20px;
   border-bottom: 5px solid rgba(12, 12, 16, 0.65); }
 
@@ -221,6 +223,7 @@ nav {
     border: 3px solid rgba(12, 12, 16, 0.65);
     border-radius: 50%;
     height: 30vh;
+    max-width: 100%;
     margin-bottom: 2rem; }
   #about p {
     color: #c5c6c7;
@@ -267,14 +270,19 @@ nav {
       box-shadow: 5px 5px 5px #0b0c10;
       border-radius: 3px; }
 
-#skills h3 {
-  margin-bottom: 0.5rem; }
-#skills ul {
-  margin-left: 20px;
-  margin-bottom: 10px; }
-  #skills ul li {
-    color: #c5c6c7;
-    line-height: 1.4rem; }
+#skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start; }
+  #skills h3 {
+    margin-bottom: 0.5rem; }
+  #skills ul {
+    margin-left: 20px;
+    margin-bottom: 10px; }
+    #skills ul li {
+      color: #c5c6c7;
+      line-height: 1.4rem; }
 
 #contact {
   background-color: #0b0c10; }
@@ -304,9 +312,6 @@ nav {
         #contact ul li span i:hover {
           color: #66fcf1; }
 
-@media (min-width: 300px) {
-  section {
-    width: calc(100% - 40px); } }
 @media (min-height: 550px) {
   section {
     height: calc(100vh - 40px);
@@ -333,18 +338,45 @@ nav {
   #contact ul li a i,
   #contact ul li span i {
     font-size: 8vh; } }
-@media (min-width: 700px) {
+@media (min-height: 900px) {
+  h2 {
+    font-size: 36px; }
+
+  h3 {
+    font-size: 27px; }
+
+  p,
+  li,
+  #projects .carousel-cell a.button {
+    font-size: 18px;
+    line-height: 29px; }
+
+  #skills ul li {
+    line-height: 32px; } }
+@media (min-width: 500px) {
   h2 {
     text-align: center; }
 
-  #about h2 {
+  #about h2,
+  #skills h2 {
     align-self: center; } }
+@media (min-width: 650px) {
+  #skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 80px 1fr 1fr 1fr 80px;
+    justify-items: center; }
+    #skills h2 {
+      grid-area: 1 / 1 / 2 / 4;
+      align-self: start; }
+    #skills .skill-list {
+      grid-row: 3 / 4; } }
 @media (min-width: 800px) {
   #hero .title h1 span {
     display: inline; } }
 @media (min-width: 1000px) {
   h2 {
-    margin-top: 50px; }
+    margin-top: 30px; }
 
   nav {
     display: block;
@@ -364,6 +396,27 @@ nav {
       height: auto; }
       nav #nav-list li {
         margin: 0.5rem 2rem; }
+
+  #about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 80px 1fr 80px; }
+    #about h2 {
+      grid-area: 1 / 1 / 2 / 4;
+      margin-top: 35px; }
+    #about p {
+      font-size: 1.3rem;
+      font-weight: 300;
+      line-height: 2rem;
+      margin-left: 50px;
+      max-width: 550px; }
+    #about img {
+      justify-self: end;
+      height: 80%;
+      max-height: 500px;
+      max-width: 500px;
+      margin-bottom: 0;
+      margin-right: 50px; }
 
   #contact ul {
     flex-direction: row; } }
