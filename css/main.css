@@ -231,8 +231,6 @@ nav {
 
 #projects {
   padding-bottom: 35px; }
-  #projects .carousel {
-    max-width: 1400px; }
   #projects .carousel-cell {
     width: 75%;
     max-width: 400px;
@@ -417,6 +415,29 @@ nav {
       max-width: 500px;
       margin-bottom: 0;
       margin-right: 50px; }
+
+  #projects .carousel-cell {
+    max-width: 700px;
+    height: 50vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 30px 40px 1fr;
+    justify-items: center;
+    align-items: start;
+    grid-row-gap: 1em; }
+    #projects .carousel-cell h3 {
+      grid-area: 1 / 1 / 2 / 4;
+      margin-bottom: 0; }
+    #projects .carousel-cell p {
+      grid-area: 3 / 1 / 4 / 2; }
+    #projects .carousel-cell a.button {
+      grid-area: 2 / 1 / 3 / 3;
+      margin-top: 0; }
+    #projects .carousel-cell img {
+      grid-area: 3 / 2 / 4 / 3;
+      margin-top: 0;
+      max-width: 80%;
+      max-height: 100%; }
 
   #contact ul {
     flex-direction: row; } }
