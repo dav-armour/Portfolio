@@ -16,9 +16,7 @@ $(function() {
   $('#project-carousel').flickity({
     // options
     wrapAround: true,
-    // groupCells: true
-    // cellAlign: 'left',
-    // contain: true
+    dragThreshold: 10
   });
 
   clipboard = new ClipboardJS('#email-button');
@@ -39,6 +37,8 @@ $(function() {
   });
 });
 
+// Function used to determine if using touch device to disable hover effects.
+// Obtained from http://www.javascriptkit.com/dhtmltutors/sticky-hover-issue-solutions.shtml
 ;(function(){
   var isTouch = false //var to indicate current input type (is touch versus no touch)
   var isTouchTimer

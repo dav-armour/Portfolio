@@ -86,6 +86,7 @@ section {
   background-color: #1f2833;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%2345A29E' fill-opacity='0.15' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
   height: 100%;
+  width: 300px;
   padding: 20px;
   border-bottom: 5px solid rgba(12, 12, 16, 0.65); }
 
@@ -214,20 +215,24 @@ nav {
   align-items: center;
   justify-content: flex-start; }
   #about h2 {
-    align-self: flex-start; }
+    align-self: flex-start;
+    margin-bottom: 2rem; }
   #about img {
     border: 3px solid rgba(12, 12, 16, 0.65);
     border-radius: 50%;
     height: 30vh;
-    margin-bottom: 1rem; }
+    margin-bottom: 2rem; }
   #about p {
     color: #c5c6c7;
     width: 80%; }
 
 #projects {
   padding-bottom: 35px; }
+  #projects .carousel {
+    max-width: 1400px; }
   #projects .carousel-cell {
     width: 75%;
+    max-width: 400px;
     height: 70vh;
     margin-right: 10px;
     padding: 1rem 2rem 1.5rem;
@@ -258,7 +263,7 @@ nav {
     #projects .carousel-cell img {
       margin-top: auto;
       max-width: 100%;
-      height: 40%;
+      max-height: 45%;
       box-shadow: 5px 5px 5px #0b0c10;
       border-radius: 3px; }
 
@@ -299,23 +304,44 @@ nav {
         #contact ul li span i:hover {
           color: #66fcf1; }
 
+@media (min-width: 300px) {
+  section {
+    width: calc(100% - 40px); } }
 @media (min-height: 550px) {
   section {
     height: calc(100vh - 40px);
     scroll-snap-align: start; }
 
-  #projects {
-    padding-bottom: 20px; } }
-@media (min-width: 600px) {
+  h2 {
+    font-size: 4vh; }
+
+  h3 {
+    font-size: 3vh; }
+
   p,
-  li {
-    font-size: 1rem; } }
+  li,
+  #projects .carousel-cell a.button {
+    font-size: 2vh;
+    line-height: 3.2vh; }
+
+  #skills ul li {
+    line-height: 3.5vh; }
+
+  #projects {
+    padding-bottom: 20px; }
+
+  #contact ul li a i,
+  #contact ul li span i {
+    font-size: 8vh; } }
 @media (min-width: 700px) {
   h2 {
     text-align: center; }
 
   #about h2 {
     align-self: center; } }
+@media (min-width: 800px) {
+  #hero .title h1 span {
+    display: inline; } }
 @media (min-width: 1000px) {
   h2 {
     margin-top: 50px; }
@@ -337,10 +363,7 @@ nav {
       align-items: flex-start;
       height: auto; }
       nav #nav-list li {
-        margin: 1em 2em; }
-
-  #hero .title h1 span {
-    display: inline; }
+        margin: 0.5rem 2rem; }
 
   #contact ul {
     flex-direction: row; } }
