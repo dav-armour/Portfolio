@@ -66,7 +66,7 @@ Website is designed as a single page with each section taking up the height of t
 ## Wireframes
 Wireframes for 3 sizes (mobile, tablet, desktop) were constructed using balsamiq.
 
-Unfortunately the wireframes were lost due to not correctly saving :(
+![image of mockups](http://i65.tinypic.com/xdzhw7.png)
 
 ## Accessability Considerations
 - Use of semantic html 5 tags to make navigating page easier.
