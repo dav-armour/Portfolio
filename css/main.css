@@ -334,7 +334,11 @@ nav {
     line-height: 3.5vh; }
 
   #projects {
-    padding-bottom: 20px; }
+    padding-bottom: 20px;
+    display: grid;
+    grid-template-rows: 4vh 1fr 3vh; }
+    #projects .carousel {
+      align-self: center; }
 
   #contact ul li a i,
   #contact ul li span i {

@@ -283,7 +283,6 @@ nav {
     }
 
     img {
-      // margin-top: auto;
       max-width: 100%;
       max-height: 45%;
       box-shadow: $shadow;
@@ -379,6 +378,12 @@ nav {
 
   #projects {
     padding-bottom: 20px;
+    display: grid;
+    grid-template-rows: 4vh 1fr 3vh;
+
+    .carousel {
+      align-self: center;
+    }
   }
 
   #contact ul li {
@@ -559,6 +564,22 @@ nav {
   }
 }
 
+// Disable hover effects for touch devices
+html.can-touch {
+  a:hover {
+    color: $dblue;
+  }
+
+  #hamburger:hover span,
+  #projects a.button:hover {
+    background-color: $dblue;
+  }
+
+  .flickity-button:hover {
+    background: transparent;
+  }
+}
+
 // @media (min-width: 1000px) and (min-height: 1000px) {
 //   #projects {
 //     height: calc(55vh - 45px);
@@ -584,19 +605,3 @@ nav {
 //     min-height: 0;
 //   }
 // }
-
-// Disable hover effects for touch devices
-html.can-touch {
-  a:hover {
-    color: $dblue;
-  }
-
-  #hamburger:hover span,
-  #projects a.button:hover {
-    background-color: $dblue;
-  }
-
-  .flickity-button:hover {
-    background: transparent;
-  }
-}
