@@ -8,7 +8,7 @@ $shadow: 5px 5px 5px $dgrey;
 
 @import 'tooltip';
 @import 'flickity';
-@import url('https://fonts.googleapis.com/css?family=Capriola|Playfair+Display:400|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Capriola|Playfair+Display:400|Roboto:300,400');
 
 * {
   margin: 0;
@@ -28,6 +28,9 @@ section {
   // Texture background
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%2345A29E' fill-opacity='0.15' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
   height: 100%;
+  min-height: 550px;
+  min-width: 300px;
+  width: calc(100% - 40px);
   padding: 20px;
   border-bottom: 5px solid $dgrey-border;
 }
@@ -61,6 +64,7 @@ p,
 li {
   font-size: 0.8rem;
   line-height: 1.3rem;
+  font-weight: 300;
 }
 
 a {
@@ -169,6 +173,7 @@ nav {
 
       a {
         font-size: 1.5rem;
+        font-weight: 400;
       }
     }
   }
@@ -218,13 +223,15 @@ nav {
 
   h2 {
     align-self: flex-start;
+    margin-bottom: 2rem;
   }
 
   img {
     border: 3px solid $dgrey-border;
     border-radius: 50%;
     height: 30vh;
-    margin-bottom: 1rem;
+    max-width: 100%;
+    margin-bottom: 2rem;
   }
 
   p {
@@ -235,9 +242,12 @@ nav {
 
 #projects {
   padding-bottom: 35px;
+
   .carousel-cell {
     width: 75%;
+    max-width: 400px;
     height: 70vh;
+    max-height: 610px;
     margin-right: 10px;
     padding: 1rem 2rem 1.5rem;
     border: 4px solid $dgrey-border;
@@ -257,6 +267,7 @@ nav {
 
     a.button {
       margin-top: 0.5rem;
+      margin-bottom: 1rem;
       text-decoration: none;
       background-color: $dblue;
       color: $dgrey;
@@ -272,9 +283,8 @@ nav {
     }
 
     img {
-      margin-top: auto;
       max-width: 100%;
-      height: 40%;
+      max-height: 45%;
       box-shadow: $shadow;
       border-radius: 3px;
     }
@@ -282,6 +292,10 @@ nav {
 }
 
 #skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   h3 {
     margin-bottom: 0.5rem;
   }
@@ -343,48 +357,102 @@ nav {
     scroll-snap-align: start;
   }
 
+  h2 {
+    font-size: 4vh;
+  }
+
+  h3 {
+    font-size: 3vh;
+  }
+
+  p,
+  li,
+  #projects .carousel-cell a.button {
+    font-size: 2vh;
+    line-height: 3.2vh;
+  }
+
+  #skills ul li {
+    line-height: 3.5vh;
+  }
+
   #projects {
     padding-bottom: 20px;
+    display: grid;
+    grid-template-rows: 4vh 1fr 3vh;
+
+    .carousel {
+      align-self: center;
+    }
+  }
+
+  #contact ul li {
+    a i,
+    span i {
+      font-size: 8vh;
+    }
   }
 }
 
-@media (min-width: 600px) {
+@media (min-height: 900px) {
+  h2 {
+    font-size: 36px;
+  }
+
+  h3 {
+    font-size: 27px;
+  }
+
   p,
-  li {
-    font-size: 1rem;
+  li,
+  #projects .carousel-cell a.button {
+    font-size: 18px;
+    line-height: 29px;
+  }
+
+  #skills ul li {
+    line-height: 32px;
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 500px) {
   h2 {
     text-align: center;
   }
 
-  #about h2 {
+  #about h2,
+  #skills h2 {
     align-self: center;
   }
 }
 
-// @media (min-height: 700px) {
-//   h2 {
-//     font-size: 1.8rem;
-//   }
+@media (min-width: 650px) {
+  #skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 80px 1fr 1fr 1fr 80px;
+    justify-items: center;
 
-//   h3 {
-//     font-size: 1.4rem;
-//   }
+    h2 {
+      grid-area: 1 / 1 / 2 / 4;
+      align-self: start;
+    }
 
-//   p,
-//   li {
-//     font-size: 1.2rem;
-//     line-height: 2rem;
-//   }
-// }
+    .skill-list {
+      grid-row: 3 / 4;
+    }
+  }
+}
 
+@media (min-width: 800px) {
+  #hero .title h1 span {
+    display: inline;
+  }
+}
 
 @media (min-width: 1000px) {
   h2 {
-    margin-top: 50px;
+    margin-top: 30px;
   }
 
   nav {
@@ -408,18 +476,90 @@ nav {
       height: auto;
 
       li {
-        margin: 1em 2em;
+        margin: 0.5rem 2rem;
       }
     }
   }
 
-  #hero .title h1 span {
-    display: inline;
+  #about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 80px 1fr 80px;
+
+    h2 {
+      grid-area: 1 / 1 / 2 / 4;
+      margin-top: 35px;
+      margin-bottom: 0;
+    }
+
+    p {
+      font-size: 1.3rem;
+      font-weight: 300;
+      line-height: 2rem;
+      margin-left: 50px;
+      max-width: 550px;
+    }
+
+    img {
+      justify-self: end;
+      height: 80%;
+      max-height: 500px;
+      max-width: 500px;
+      margin-bottom: 0;
+      margin-right: 50px;
+    }
+  }
+
+  #projects {
+    .carousel-cell {
+      max-width: 700px;
+      height: 400px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 30px 40px 1fr;
+      justify-items: center;
+      align-items: start;
+      grid-row-gap: 1em;
+
+      h3 {
+        grid-area: 1 / 1 / 2 / 4;
+        margin-bottom: 0;
+      }
+
+      p {
+        grid-area: 3 / 1 / 4 / 2;
+        font-size: 18px;
+        font-weight: 300;
+      }
+
+      a.button {
+        grid-area: 2 / 1 / 3 / 3;
+        margin-top: 0;
+      }
+
+      img {
+        grid-area: 3 / 2 / 4 / 3;
+        margin-top: 0;
+        max-width: 80%;
+        max-height: 100%;
+      }
+
+    }
+  }
+
+  #skills {
+    li {
+      font-size: 18px;
+    }
   }
 
   #contact {
     ul {
       flex-direction: row;
+
+      li a i {
+        font-size: 100px;
+      }
     }
   }
 }
@@ -436,20 +576,32 @@ html.can-touch {
   }
 
   .flickity-button:hover {
-      background: transparent;
-    }
+    background: transparent;
+  }
 }
 
-// @media (max-height: 600px) {
-//   #projects .carousel-cell {
+// @media (min-width: 1000px) and (min-height: 1000px) {
+//   #projects {
+//     height: calc(55vh - 45px);
+//     min-height: 0;
+//     // border-bottom: none;
+//   }
 
-//     h3 {
-//       color: $dblue;
-//       margin-bottom: 1rem;
-//     }
+//   #skills {
+//     grid-template-rows: 100px 1fr;
+//     height: calc(45vh - 40px);
+//     min-height: 0;
 
-//     p {
-//       font-size: 0.8rem;
+//     h2 {
+//       // margin-top: 0;
 //     }
+//     .skill-list {
+//       grid-row: 2 / 3;
+//     }
+//   }
+
+//   #contact {
+//     height: calc(55vh - 65px);
+//     min-height: 0;
 //   }
 // }
