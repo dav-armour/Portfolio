@@ -237,6 +237,7 @@ nav {
     width: 75%;
     max-width: 400px;
     height: 70vh;
+    min-height: 400px;
     max-height: 610px;
     margin-right: 10px;
     padding: 1rem 2rem 1.5rem;
