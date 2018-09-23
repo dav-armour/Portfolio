@@ -44,7 +44,12 @@ Website is designed as a single page with each section taking up the height of t
 - HTML5
 - CSS3
 - Javascript
-- JQuery
+
+### Javascript libraries used:
+- [Jquery]() - allows easily targeting html elements
+- [Particles](https://vincentgarreau.com/particles.js/) - background of top hero section
+- [Flickity](https://flickity.metafizzy.co/) - carousel used for projects section
+- [Clipboard](https://clipboardjs.com/) - used to copy email address to clipboard
 
 ## Design Process
 1. Create [trello board](https://trello.com/b/gRYfsCoF/portfolio-page) for project.
