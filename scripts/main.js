@@ -8,8 +8,8 @@ $(function() {
   });
 
   $("#nav-list a").on('click', function(event) {
-    $("#nav-list").toggleClass('open');
-    $("#hamburger").toggleClass('open');
+    $("#nav-list").removeClass('open');
+    $("#hamburger").removeClass('open');
     $("#email-box").show();
   });
 
