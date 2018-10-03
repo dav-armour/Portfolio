@@ -1,3 +1,7 @@
+function adjustHeight(height){
+  $('particles-js-canvas-el').attr('height', `${height}px`);
+};
+
 $(function() {
 
   $("#hamburger").on('click', function(){
@@ -35,6 +39,10 @@ $(function() {
   particlesJS.load('particles-js', 'https://api.myjson.com/bins/1c12jw', function() {
     console.log('callback - particles.js config loaded');
   });
+  adjustHeight();
+  $(window).on('resize', adjustHeight);
+
+  console.log($(window).height());
 });
 
 // Function used to determine if using touch device to disable hover effects.
