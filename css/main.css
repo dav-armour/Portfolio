@@ -240,7 +240,7 @@ nav {
     min-height: 400px;
     max-height: 610px;
     margin-right: 10px;
-    padding: 1rem 2rem 1.5rem;
+    padding: 1rem 2rem;
     border: 4px solid rgba(12, 12, 16, 0.65);
     border-radius: 10px;
     background: #1f2833;
@@ -273,10 +273,14 @@ nav {
       border-radius: 3px; }
     #projects .carousel-cell ul {
       display: none;
-      list-style: none; }
+      list-style: none;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: auto;
+      width: 100%; }
       #projects .carousel-cell ul i {
         color: #45a29e;
-        font-size: 40px; }
+        font-size: 30px; }
 
 #skills {
   display: flex;
@@ -350,6 +354,9 @@ nav {
   #contact ul li a i,
   #contact ul li span i {
     font-size: 8vh; } }
+@media (min-height: 700px) {
+  #projects .carousel-cell ul {
+    display: flex; } }
 @media (min-height: 900px) {
   h2 {
     font-size: 36px; }
@@ -371,7 +378,10 @@ nav {
 
   #about h2,
   #skills h2 {
-    align-self: center; } }
+    align-self: center; }
+
+  #projects .carousel-cell ul i {
+    font-size: 40px; } }
 @media (min-width: 650px) {
   #skills {
     display: grid;
@@ -457,11 +467,7 @@ nav {
       max-height: 100%; }
     #projects .carousel-cell ul {
       display: flex;
-      justify-content: space-around;
-      align-items: center;
-      grid-area: 4 / 1 / 5 / 4;
-      width: 100%;
-      height: 100%; }
+      grid-area: 4 / 1 / 5 / 4; }
 
   #skills li {
     font-size: 18px; }

@@ -250,7 +250,7 @@ nav {
     min-height: 400px;
     max-height: 610px;
     margin-right: 10px;
-    padding: 1rem 2rem 1.5rem;
+    padding: 1rem 2rem;
     border: 4px solid $dgrey-border;
     border-radius: 10px;
     background: $mgrey;
@@ -293,14 +293,14 @@ nav {
     ul {
       display: none;
       list-style: none;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: auto;
+      width: 100%;
 
       i {
-        // color: #0b0c10;
         color: #45a29e;
-        font-size: 40px;
-        &:hover {
-          // color: #66fcf1
-        }
+        font-size: 30px;
       }
     }
   }
@@ -409,6 +409,12 @@ nav {
   }
 }
 
+@media (min-height: 700px) {
+  #projects .carousel-cell ul {
+    display: flex;
+  }
+}
+
 @media (min-height: 900px) {
   h2 {
     font-size: 36px;
@@ -438,6 +444,10 @@ nav {
   #about h2,
   #skills h2 {
     align-self: center;
+  }
+
+  #projects .carousel-cell ul i {
+    font-size: 40px;
   }
 }
 
@@ -561,11 +571,7 @@ nav {
 
       ul {
         display: flex;
-        justify-content: space-around;
-        align-items: center;
         grid-area: 4 / 1 / 5 / 4;
-        width: 100%;
-        height: 100%;
       }
     }
   }
@@ -602,29 +608,3 @@ html.can-touch {
     background: transparent;
   }
 }
-
-// @media (min-width: 1000px) and (min-height: 1000px) {
-//   #projects {
-//     height: calc(55vh - 45px);
-//     min-height: 0;
-//     // border-bottom: none;
-//   }
-
-//   #skills {
-//     grid-template-rows: 100px 1fr;
-//     height: calc(45vh - 40px);
-//     min-height: 0;
-
-//     h2 {
-//       // margin-top: 0;
-//     }
-//     .skill-list {
-//       grid-row: 2 / 3;
-//     }
-//   }
-
-//   #contact {
-//     height: calc(55vh - 65px);
-//     min-height: 0;
-//   }
-// }
