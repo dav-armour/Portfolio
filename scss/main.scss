@@ -181,7 +181,7 @@ nav {
 
 #hero {
   background-color: $dgrey;
-  border-bottom: 0;
+  // border-bottom: 0;
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
@@ -477,7 +477,7 @@ nav {
 
 @media (min-width: 1000px) {
   h2 {
-    margin-top: 30px;
+    margin-top: 35px;
   }
 
   nav {
@@ -492,6 +492,7 @@ nav {
     }
 
     #nav-list {
+      padding: 5px;
       background-color: $dgrey;
       display: flex;
       opacity: 1;
@@ -513,8 +514,9 @@ nav {
 
     h2 {
       grid-area: 1 / 1 / 2 / 4;
-      margin-top: 35px;
-      margin-bottom: 0;
+      align-self: stretch;
+      // margin-top: 45px;
+      // margin-bottom: 0;
     }
 
     p {
