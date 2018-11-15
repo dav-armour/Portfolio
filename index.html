@@ -38,6 +38,11 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
+  <div id="project-modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="project-modal-image">
+    <div id="modal-caption"></div>
+  </div>
   <section id="hero">
     <div id="particles-js"></div>
     <div class="title">
@@ -60,7 +65,7 @@
         <a class="button" href="https://github.com/dav-armour/sloper" target="_blank">
           <i class="fab fa-github-alt"></i> GitHub
         </a>
-        <img src="images/sloper-ss.gif" alt="Screenshot of maze game">
+        <img class="project-image" src="images/sloper-ss.gif" alt="Screenshot of sloper website">
         <ul class="project-skills">
           <li><i class="devicon-ruby-plain-wordmark"></i></li>
           <li><i class="devicon-rails-plain-wordmark"></i></li>
@@ -77,7 +82,7 @@
         <a class="button" href="https://github.com/dav-armour/random-maze-game" target="_blank">
           <i class="fab fa-github-alt"></i> GitHub
         </a>
-        <img src="images/easy-maze-ss.png" alt="Screenshot of maze game">
+        <img class="project-image" src="images/easy-maze-ss.png" alt="Screenshot of maze game">
         <ul class="project-skills">
           <li><i class="devicon-ruby-plain-wordmark"></i></li>
         </ul>
@@ -88,7 +93,7 @@
         <a class="button" href="https://github.com/dav-armour/roster-maker" target="_blank">
           <i class="fab fa-github-alt"></i> GitHub
         </a>
-        <img src="images/roster-maker-ss.gif" alt="Screenshot of roster maker web app">
+        <img class="project-image" src="images/roster-maker-ss.gif" alt="Screenshot of roster maker web app">
         <ul class="project-skills">
           <li><i class="devicon-html5-plain-wordmark"></i></li>
           <li><i class="devicon-css3-plain-wordmark"></i></li>
@@ -104,7 +109,7 @@
         <a class="button" href="https://github.com/dav-armour/terminal-basic-menu" target="_blank">
           <i class="fab fa-github-alt"></i> GitHub
         </a>
-        <img src="images/terminal-menu-ss.png" alt="Screenshot of terminal menu gem">
+        <img class="project-image" src="images/terminal-menu-ss.png" alt="Screenshot of terminal menu gem">
         <ul class="project-skills">
           <li><i class="devicon-ruby-plain-wordmark"></i></li>
         </ul>
@@ -176,5 +181,6 @@
       </li>
     </ul>
   </section>
+  <script src="scripts/modal.js"></script>
 </body>
 </html>
