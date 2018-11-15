@@ -20,7 +20,9 @@ for (let image of projectImages) {
 //     modal.style.display = "none";
 // }
 
-modal.onclick = function() {
-  console.log(this);
-  modal.style.display= "none";
+modal.onclick = function(e) {
+  console.log(e.target);
+  if (e.target != modalImg ) {
+    modal.style.display= "none";
+  }
 }

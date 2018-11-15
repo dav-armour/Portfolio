@@ -542,7 +542,7 @@ html.can-touch .flickity-button:hover {
   max-width: 1500px; }
 
 /* Caption of Modal Image */
-#caption {
+#modal-caption {
   margin: auto;
   display: block;
   width: 80%;
@@ -553,7 +553,7 @@ html.can-touch .flickity-button:hover {
   height: 150px; }
 
 /* Add Animation */
-.modal-content, #caption {
+.modal-content, #modal-caption {
   animation-name: zoom;
   animation-duration: 0.4s; }
 
