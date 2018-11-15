@@ -680,7 +680,7 @@ html.can-touch {
 }
 
 /* Caption of Modal Image */
-#caption {
+#modal-caption {
   margin: auto;
   display: block;
   width: 80%;
@@ -692,7 +692,7 @@ html.can-touch {
 }
 
 /* Add Animation */
-.modal-content, #caption {
+.modal-content, #modal-caption {
   animation-name: zoom;
   animation-duration: 0.4s;
 }
