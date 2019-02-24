@@ -144,7 +144,8 @@ nav {
       border-radius: 3px;
       z-index: 99;
       transform-origin: 4px;
-      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
       &:nth-of-type(1) {
         transform-origin: 0% 0%;
       }
@@ -247,8 +248,8 @@ nav {
   .carousel-cell {
     width: 75%;
     max-width: 400px;
-    height: 70vh;
-    min-height: 400px;
+    height: 60vh;
+    min-height: 350px;
     max-height: 610px;
     margin-right: 10px;
     padding: 1rem 2rem;
@@ -388,9 +389,13 @@ nav {
   }
 }
 
-@media (min-height: 700px) {
-  #projects .carousel-cell ul {
-    display: flex;
+@media (min-height: 800px) {
+  #projects .carousel-cell {
+    height: 70vh;
+    min-height: 400px;
+    ul {
+      display: flex;
+    }
   }
 }
 

@@ -265,8 +265,8 @@ nav {
   #projects .carousel-cell {
     width: 75%;
     max-width: 400px;
-    height: 70vh;
-    min-height: 400px;
+    height: 60vh;
+    min-height: 350px;
     max-height: 610px;
     margin-right: 10px;
     padding: 1rem 2rem;
@@ -383,9 +383,12 @@ nav {
   #contact ul li a i,
   #contact ul li span i {
     font-size: 8vh; } }
-@media (min-height: 700px) {
-  #projects .carousel-cell ul {
-    display: flex; } }
+@media (min-height: 800px) {
+  #projects .carousel-cell {
+    height: 70vh;
+    min-height: 400px; }
+    #projects .carousel-cell ul {
+      display: flex; } }
 @media (min-height: 900px) {
   h2 {
     font-size: 36px; }
