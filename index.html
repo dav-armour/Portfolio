@@ -1,203 +1,360 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>David Armour Portfolio</title>
-  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>David Armour Portfolio</title>
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height, initial-scale=1"
+    />
 
-  <!-- Jquery -->
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <!-- Particles Background -->
-  <script src="scripts/particles.min.js"></script>
-  <!-- Flickity Carousel -->
-  <script src="scripts/flickity.pkgd.min.js"></script>
-  <link rel="stylesheet" href="css/flickity.min.css">
-  <!-- Clipboard - Enable copying email to clipboard -->
-  <script src="scripts/clipboard.min.js"></script>
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <!-- Devicons -->
-  <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+    <!-- Jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Particles Background -->
+    <script src="scripts/particles.min.js"></script>
+    <!-- Flickity Carousel -->
+    <script src="scripts/flickity.pkgd.min.js"></script>
+    <link rel="stylesheet" href="css/flickity.min.css" />
+    <!-- Clipboard - Enable copying email to clipboard -->
+    <script src="scripts/clipboard.min.js"></script>
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"
+    />
+    <!-- Devicons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css"
+    />
 
-  <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-  <script src="scripts/main.js"></script>
-</head>
-<body>
-  <nav>
-    <div id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <ul id="nav-list">
-      <li><a href="#">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-  <div id="project-modal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="project-modal-image">
-    <div id="modal-caption"></div>
-  </div>
-  <section id="hero">
-    <div id="particles-js"></div>
-    <div class="title">
-      <h1><span>David</span><span> Armour </span></h1>
-      <h2>Web Developer</h2>
-    </div>
-    <div class="scroll-down"></div>
-  </section>
-  <section id="about">
-    <h2>About Me</h2>
-    <img src="images/headshot.jpg" alt="Headshot picture of David Armour" />
-    <p>Hi I'm David Armour and I am currently attending a coding bootcamp in order to become a full stack web developer. My background in retail has given me great communication and customer service skills. My coding is fueled by my desire to understand technology and how it can be used to improve people’s lives. I am interested in machine learning, artificial intelligence and blockchain technology. Outside of coding my main passion is snowboarding and the freedom of exploration it offers.</p>
-  </section>
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="carousel" id="project-carousel">
-      <div class="carousel-cell">
-        <h3><a href="https://sloper.herokuapp.com/" target="_blank">Sloper</a></h3>
-        <p>A two sided marketplace built using Ruby on Rails that allows for renting of unused snow equipment. Stripe API used to allow payments and refunds. AWS S3 Bucket used to store listing images and profile avatars. Deployed to <a href="https://sloper.herokuapp.com/" target="_blank">Heroku</a>. </p>
-        <a class="button" href="https://github.com/dav-armour/sloper" target="_blank">
-          <i class="fab fa-github-alt"></i> GitHub
-        </a>
-        <img class="project-image" src="images/sloper-ss.gif" alt="Screenshot of sloper website">
-        <ul class="project-skills">
-          <li><i class="devicon-ruby-plain-wordmark"></i></li>
-          <li><i class="devicon-rails-plain-wordmark"></i></li>
-          <li><i class="devicon-postgresql-plain-wordmark"></i></li>
-          <li><i class="devicon-heroku-plain-wordmark"></i></li>
-          <li><i class="devicon-html5-plain-wordmark"></i></li>
-          <li><i class="devicon-sass-original"></i></li>
-          <li><i class="devicon-bootstrap-plain-wordmark"></i></li>
-        </ul>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <script src="scripts/main.js"></script>
+  </head>
+  <body>
+    <nav>
+      <div id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-      <div class="carousel-cell">
-        <h3><a href="https://umbo.herokuapp.com/" target="_blank">Umbo</a></h3>
-        <p>Created during Random Hacks of Kindness weekend meetup to connect therapists with children living in remote areas. Developed in combination with a UI/UX team to appeal to potential investors. Deployed using continuous integration to <a href="https://umbo.herokuapp.com/" target="_blank">Heroku</a> and <a href="http://umbo-env.ar7w6bz2vy.ap-southeast-2.elasticbeanstalk.com/" target="_b2lank">AWS</a>.</p>
-        <a class="button" href="https://github.com/RHoKAustralia" target="_blank">
-          <i class="fab fa-github-alt"></i> GitHub
-        </a>
-        <img class="project-image" src="images/umbo-ss.gif" alt="Screenshot of umbo website">
-        <ul class="project-skills">
-          <li><i class="devicon-ruby-plain-wordmark"></i></li>
-          <li><i class="devicon-rails-plain-wordmark"></i></li>
-          <li><i class="devicon-postgresql-plain-wordmark"></i></li>
-          <li><i class="devicon-heroku-plain-wordmark"></i></li>
-          <li><i class="devicon-html5-plain-wordmark"></i></li>
-          <li><i class="devicon-sass-original"></i></li>
-          <li><i class="devicon-bootstrap-plain-wordmark"></i></li>
-        </ul>
-      </div>
-      <div class="carousel-cell">
-        <h3>Random Maze Game</h3>
-        <p>A ruby terminal application designed to prevent boredom by entertaining the user. The maze is created using a recursive backtracker algorithm. This recursive method allows for creation of mazes of varying sizes to increase difficulty.</p>
-        <a class="button" href="https://github.com/dav-armour/random-maze-game" target="_blank">
-          <i class="fab fa-github-alt"></i> GitHub
-        </a>
-        <img class="project-image" src="images/easy-maze-ss.png" alt="Screenshot of maze game">
-        <ul class="project-skills">
-          <li><i class="devicon-ruby-plain-wordmark"></i></li>
-        </ul>
-      </div>
-      <div class="carousel-cell">
-        <h3><a href="https://roster-maker.herokuapp.com/" target="_blank">Roster Maker</a></h3>
-        <p>A python flask web app designed to allow users to easily manage work rosters. Has multiple access levels to allow for modifying the roster and users. PostreSQL used for production and SQLite used for development. Deployed to <a href="https://roster-maker.herokuapp.com/" target="_blank">Heroku</a>. </p>
-        <a class="button" href="https://github.com/dav-armour/roster-maker" target="_blank">
-          <i class="fab fa-github-alt"></i> GitHub
-        </a>
-        <img class="project-image" src="images/roster-maker-ss.gif" alt="Screenshot of roster maker web app">
-        <ul class="project-skills">
-          <li><i class="devicon-html5-plain-wordmark"></i></li>
-          <li><i class="devicon-css3-plain-wordmark"></i></li>
-          <li><i class="devicon-bootstrap-plain-wordmark"></i></li>
-          <li><i class="devicon-python-plain-wordmark"></i></li>
-          <li><i class="devicon-postgresql-plain-wordmark"></i></li>
-          <li><i class="devicon-heroku-plain-wordmark"></i></li>
-        </ul>
-      </div>
-      <div class="carousel-cell">
-        <h3>Terminal Menu</h3>
-        <p>A ruby gem used to create basic menus inside the terminal. There are multiple different configuration options that allow for custom layouts and colors. Also gives the ability to enable word wrapping. Deployed to <a href="https://rubygems.org/gems/terminal-basic-menu" target="_blank">RubyGems</a>.</p>
-        <a class="button" href="https://github.com/dav-armour/terminal-basic-menu" target="_blank">
-          <i class="fab fa-github-alt"></i> GitHub
-        </a>
-        <img class="project-image" src="images/terminal-menu-ss.png" alt="Screenshot of terminal menu gem">
-        <ul class="project-skills">
-          <li><i class="devicon-ruby-plain-wordmark"></i></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skill-list">
-      <h3>Front End</h3>
-      <ul>
-        <li>HTML5</li>
-        <li>CSS3</li>
-        <li>Sass</li>
-        <li>Bootstrap 4</li>
-        <li>Javascript</li>
-        <li>JQuery</li>
+      <ul id="nav-list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
+    </nav>
+    <div id="project-modal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="project-modal-image" />
+      <div id="modal-caption"></div>
     </div>
-    <div class="skill-list">
-      <h3>Back End</h3>
-      <ul>
-        <li>Ruby</li>
-        <li>Python</li>
-        <li>Flask</li>
-        <li>SQLite</li>
-        <li>PotgreSQL</li>
-      </ul>
-    </div>
-    <div class="skill-list">
-      <h3>Tools</h3>
-      <ul>
-        <li>Git/GitHub</li>
-        <li>Balsamiq</li>
-        <li>VS Code</li>
-        <li>Trello</li>
-        <li>Slack</li>
-      </ul>
-    </div>
-  </section>
-  <section id="contact">
-    <h2>Contact</h2>
-    <ul>
-      <li id="email-box">
-        <span id="email-tooltip" tooltip="Click to copy to clipboard." class="">
-          <a id="email-button" data-clipboard-text="dav.armour@gmail.com">
-            <i class="fas fa-envelope-square"></i>
+    <section id="hero">
+      <div id="particles-js"></div>
+      <div class="title">
+        <h1><span>David</span><span> Armour </span></h1>
+        <h2>Web Developer</h2>
+      </div>
+      <a href="#about" class="scroll-down"></a>
+    </section>
+    <section id="about">
+      <h2>About Me</h2>
+      <img src="images/headshot.jpg" alt="Headshot picture of David Armour" />
+      <p>
+        Hi I'm David Armour and I have recently completed a coding bootcamp in
+        order to become a full stack web developer. My coding is fueled by my
+        desire to understand technology and how it can be used to improve
+        people’s lives. I am interested in machine learning, artificial
+        intelligence and blockchain technology. Outside of coding my main
+        passion is snowboarding and the freedom of exploration it offers.
+      </p>
+      <a href="#projects" class="scroll-down"></a>
+    </section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="carousel" id="project-carousel">
+        <div class="carousel-cell">
+          <h3>
+            <a href="http://www.travelnmove.com" target="_blank"
+              >Travel N Move</a
+            >
+          </h3>
+          <p>
+            A travel consultant website that focuses on tour packages in India.
+            Built using MERN stack and deployed using CircleCI, AWS Elastic
+            Beanstalk (API) and the React front end to
+            <a href="http://www.travelnmove.com" target="_blank"
+              >AWS S3 Bucket</a
+            >.
+          </p>
+          <a
+            class="button"
+            href="https://github.com/dav-armour/travel-n-move-react"
+            target="_blank"
+          >
+            <i class="fab fa-github-alt"></i> GitHub
           </a>
-        </span>
-      <li>
-        <a href="https://www.linkedin.com/in/david-armour-860b56165" target="_blank">
-          <i class="fab fa-linkedin"></i>
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/dav-armour" target="_blank">
-          <i class="fab fa-github-square"></i>
-        </a>
-      </li>
-      <li>
-        <a href="https://medium.com/@dav.armour" target="_blank">
-          <i class="fab fa-medium"></i>
-        </a>
-      </li>
-      <li>
-        <a href="https://twitter.com/DavArmour" target="_blank">
-          <i class="fab fa-twitter-square"></i>
-        </a>
-      </li>
-    </ul>
-  </section>
-  <script src="scripts/modal.js"></script>
-</body>
+          <img
+            class="project-image"
+            src="images/travel-n-move-ss.gif"
+            alt="Screenshot of travel n move website"
+          />
+          <ul class="project-skills">
+            <li><i class="devicon-javascript-plain"></i></li>
+            <li><i class="devicon-nodejs-plain"></i></li>
+            <li><i class="devicon-express-original"></i></li>
+            <li><i class="devicon-mongodb-plain-wordmark"></i></li>
+            <li><i class="devicon-react-original-wordmark"></i></li>
+            <li><i class="devicon-amazonwebservices-plain"></i></li>
+          </ul>
+        </div>
+        <div class="carousel-cell">
+          <h3>
+            <a href="https://umbo.herokuapp.com/" target="_blank">Umbo</a>
+          </h3>
+          <p>
+            Created during Random Hacks of Kindness weekend meetup to connect
+            therapists with children living in remote areas. Developed in
+            combination with a UI/UX team to appeal to potential investors.
+            Deployed using continuous integration to
+            <a href="https://umbo.herokuapp.com/" target="_blank">Heroku</a> and
+            <a
+              href="http://umbo-env.ar7w6bz2vy.ap-southeast-2.elasticbeanstalk.com/"
+              target="_b2lank"
+              >AWS</a
+            >.
+          </p>
+          <a
+            class="button"
+            href="https://github.com/RHoKAustralia"
+            target="_blank"
+          >
+            <i class="fab fa-github-alt"></i> GitHub
+          </a>
+          <img
+            class="project-image"
+            src="images/umbo-ss.gif"
+            alt="Screenshot of umbo website"
+          />
+          <ul class="project-skills">
+            <li><i class="devicon-ruby-plain-wordmark"></i></li>
+            <li><i class="devicon-rails-plain-wordmark"></i></li>
+            <li><i class="devicon-postgresql-plain-wordmark"></i></li>
+            <li><i class="devicon-heroku-plain-wordmark"></i></li>
+            <li><i class="devicon-html5-plain-wordmark"></i></li>
+            <li><i class="devicon-sass-original"></i></li>
+            <li><i class="devicon-bootstrap-plain-wordmark"></i></li>
+          </ul>
+        </div>
+        <div class="carousel-cell">
+          <h3>Random Maze Game</h3>
+          <p>
+            A ruby terminal application designed to prevent boredom by
+            entertaining the user. The maze is created using a recursive
+            backtracker algorithm. This recursive method allows for creation of
+            mazes of varying sizes to increase difficulty.
+          </p>
+          <a
+            class="button"
+            href="https://github.com/dav-armour/random-maze-game"
+            target="_blank"
+          >
+            <i class="fab fa-github-alt"></i> GitHub
+          </a>
+          <img
+            class="project-image"
+            src="images/easy-maze-ss.png"
+            alt="Screenshot of maze game"
+          />
+          <ul class="project-skills">
+            <li><i class="devicon-ruby-plain-wordmark"></i></li>
+          </ul>
+        </div>
+        <div class="carousel-cell">
+          <h3>
+            <a href="https://roster-maker.herokuapp.com/" target="_blank"
+              >Roster Maker</a
+            >
+          </h3>
+          <p>
+            A python flask web app designed to allow users to easily manage work
+            rosters. Has multiple access levels to allow for modifying the
+            roster and users. PostreSQL used for production and SQLite used for
+            development. Deployed to
+            <a href="https://roster-maker.herokuapp.com/" target="_blank"
+              >Heroku</a
+            >.
+          </p>
+          <a
+            class="button"
+            href="https://github.com/dav-armour/roster-maker"
+            target="_blank"
+          >
+            <i class="fab fa-github-alt"></i> GitHub
+          </a>
+          <img
+            class="project-image"
+            src="images/roster-maker-ss.gif"
+            alt="Screenshot of roster maker web app"
+          />
+          <ul class="project-skills">
+            <li><i class="devicon-html5-plain-wordmark"></i></li>
+            <li><i class="devicon-css3-plain-wordmark"></i></li>
+            <li><i class="devicon-bootstrap-plain-wordmark"></i></li>
+            <li><i class="devicon-python-plain-wordmark"></i></li>
+            <li><i class="devicon-postgresql-plain-wordmark"></i></li>
+            <li><i class="devicon-heroku-plain-wordmark"></i></li>
+          </ul>
+        </div>
+        <div class="carousel-cell">
+          <h3>Terminal Menu</h3>
+          <p>
+            A ruby gem used to create basic menus inside the terminal. There are
+            multiple different configuration options that allow for custom
+            layouts and colors. Also gives the ability to enable word wrapping.
+            Deployed to
+            <a
+              href="https://rubygems.org/gems/terminal-basic-menu"
+              target="_blank"
+              >RubyGems</a
+            >.
+          </p>
+          <a
+            class="button"
+            href="https://github.com/dav-armour/terminal-basic-menu"
+            target="_blank"
+          >
+            <i class="fab fa-github-alt"></i> GitHub
+          </a>
+          <img
+            class="project-image"
+            src="images/terminal-menu-ss.png"
+            alt="Screenshot of terminal menu gem"
+          />
+          <ul class="project-skills">
+            <li><i class="devicon-ruby-plain-wordmark"></i></li>
+          </ul>
+        </div>
+        <div class="carousel-cell">
+          <h3>
+            <a href="https://sloper.herokuapp.com/" target="_blank">Sloper</a>
+          </h3>
+          <p>
+            A two sided marketplace built using Ruby on Rails that allows for
+            renting of unused snow equipment. Stripe API used to allow payments
+            and refunds. AWS S3 Bucket used to store listing images and profile
+            avatars. Deployed to
+            <a href="https://sloper.herokuapp.com/" target="_blank">Heroku</a>.
+          </p>
+          <a
+            class="button"
+            href="https://github.com/dav-armour/sloper"
+            target="_blank"
+          >
+            <i class="fab fa-github-alt"></i> GitHub
+          </a>
+          <img
+            class="project-image"
+            src="images/sloper-ss.gif"
+            alt="Screenshot of sloper website"
+          />
+          <ul class="project-skills">
+            <li><i class="devicon-ruby-plain-wordmark"></i></li>
+            <li><i class="devicon-rails-plain-wordmark"></i></li>
+            <li><i class="devicon-postgresql-plain-wordmark"></i></li>
+            <li><i class="devicon-heroku-plain-wordmark"></i></li>
+            <li><i class="devicon-html5-plain-wordmark"></i></li>
+            <li><i class="devicon-sass-original"></i></li>
+            <li><i class="devicon-bootstrap-plain-wordmark"></i></li>
+          </ul>
+        </div>
+      </div>
+      <a href="#skills" class="scroll-down"></a>
+    </section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skill-list">
+        <h3>Front End</h3>
+        <ul>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>Sass</li>
+          <li>Bootstrap 4</li>
+          <li>Javascript</li>
+          <li>JQuery</li>
+        </ul>
+      </div>
+      <div class="skill-list">
+        <h3>Back End</h3>
+        <ul>
+          <li>Ruby</li>
+          <li>Python</li>
+          <li>Flask</li>
+          <li>SQLite</li>
+          <li>PotgreSQL</li>
+        </ul>
+      </div>
+      <div class="skill-list">
+        <h3>Tools</h3>
+        <ul>
+          <li>Git/GitHub</li>
+          <li>Balsamiq</li>
+          <li>VS Code</li>
+          <li>Trello</li>
+          <li>Slack</li>
+        </ul>
+      </div>
+      <a href="#contact" class="scroll-down"></a>
+    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <ul>
+        <li id="email-box">
+          <span
+            id="email-tooltip"
+            tooltip="Click to copy to clipboard."
+            class=""
+          >
+            <a id="email-button" data-clipboard-text="dav.armour@gmail.com">
+              <i class="fas fa-envelope-square"></i>
+            </a>
+          </span>
+        </li>
+
+        <li>
+          <a
+            href="https://www.linkedin.com/in/david-armour-860b56165"
+            target="_blank"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/dav-armour" target="_blank">
+            <i class="fab fa-github-square"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://medium.com/@dav.armour" target="_blank">
+            <i class="fab fa-medium"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/DavArmour" target="_blank">
+            <i class="fab fa-twitter-square"></i>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <script src="scripts/modal.js"></script>
+  </body>
 </html>

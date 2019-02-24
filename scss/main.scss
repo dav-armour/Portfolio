@@ -5,11 +5,9 @@ $mgrey: #1f2833;
 $dgrey: #0b0c10;
 $dgrey-border: rgba(12, 12, 16, 0.65);
 $shadow: 5px 5px 5px $dgrey;
-
-@import 'tooltip';
-@import 'flickity';
-@import url('https://fonts.googleapis.com/css?family=Capriola|Playfair+Display:400|Roboto:300,400');
-
+@import "tooltip";
+@import "flickity";
+@import url("https://fonts.googleapis.com/css?family=Capriola|Playfair+Display:400|Roboto:300,400");
 * {
   margin: 0;
   padding: 0;
@@ -24,40 +22,40 @@ body {
 }
 
 section {
-  background-color: $mgrey;
-  // Texture background
+  position: relative;
+  background-color: $mgrey; // Texture background
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%2345A29E' fill-opacity='0.15' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
   height: 100%;
   min-height: 550px;
   min-width: 300px;
   width: calc(100% - 40px);
   padding: 20px;
-  border-bottom: 5px solid $dgrey-border;
+  border-bottom: 2px solid $dgrey-border;
 }
 
 h1 {
   color: $lblue;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   line-height: 3rem;
 }
 
 h2 {
   color: $lblue;
   margin-bottom: 1rem;
-  font-family: 'Capriola', sans-serif;
+  font-family: "Capriola", sans-serif;
   text-shadow: 5px 5px 5px $dgrey;
 }
 
 h3 {
   color: $dblue;
-  font-family: 'Capriola', sans-serif;
+  font-family: "Capriola", sans-serif;
   text-shadow: 4px 4px 5px $dgrey;
 }
 
 p,
 a,
 li {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 p,
@@ -70,9 +68,40 @@ li {
 a {
   text-decoration: none;
   color: $dblue;
-
   &:hover {
     color: $lblue;
+  }
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -16px;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border: 2px solid $dblue;
+  border-radius: 50%;
+  z-index: 2;
+  &:before {
+    position: absolute;
+    top: calc(50% - 10px);
+    left: calc(50% - 6px);
+    transform: rotate(-45deg);
+    display: block;
+    width: 12px;
+    height: 12px;
+    content: "";
+    border: 2px solid $dblue;
+    border-width: 0px 0 2px 2px;
+  }
+  &:hover {
+    border: 2px solid $lblue;
+  }
+  &:hover:before {
+    border: 2px solid $lblue;
+    border-width: 0px 0 2px 2px;
   }
 }
 
@@ -82,12 +111,10 @@ a {
     display: none;
     opacity: 0;
   }
-
   1% {
     display: block;
     opacity: 0;
   }
-
   100% {
     display: block;
     opacity: 1;
@@ -100,17 +127,14 @@ nav {
   top: 0;
   left: 0;
   z-index: 98;
-
   #hamburger {
     position: fixed;
-    top: 1em;
-    right: 1em;
+    top: 15px;
+    right: 15px;
     cursor: pointer;
-
     &:hover span {
       background-color: $lblue;
     }
-
     span {
       display: block;
       width: 33px;
@@ -119,60 +143,47 @@ nav {
       background: $dblue;
       border-radius: 3px;
       z-index: 99;
-
       transform-origin: 4px;
-
-      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-      background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-      opacity 0.55s ease;
-
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
       &:nth-of-type(1) {
         transform-origin: 0% 0%;
       }
-
       &:nth-of-type(3) {
         transform-origin: 0% 100%;
       }
     }
-
     &.open {
       span:nth-of-type(1) {
         transform: rotate(45deg) translate(-4px, -1px);
       }
-
       span:nth-of-type(2) {
         opacity: 0;
         transform: scale(0.2, 0.2);
       }
-
       span:nth-of-type(3) {
         transform: rotate(-45deg) translate(-2px, -1px);
       }
     }
   }
-
   #nav-list {
     display: none;
     opacity: 0;
+    padding: 20px 0;
     background-color: $lgrey;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     height: 100%;
-    height: 100vh;
-    // transition: opacity 2s ease-in-out;
+    height: calc(100vh - 40px); // transition: opacity 2s ease-in-out;
     animation: fadeInFromNone 0.3s ease-in-out;
-
     &.open {
       display: flex;
       opacity: 1;
     }
-
     li {
       list-style: none;
-
       a {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         font-weight: 400;
       }
     }
@@ -180,33 +191,27 @@ nav {
 }
 
 #hero {
-  background-color: $dgrey;
-  // border-bottom: 0;
+  background-color: $dgrey; // border-bottom: 0;
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-
   #particles-js {
     grid-area: 1 / 1 / -1 / -1;
   }
-
   .title {
     grid-area: 2 / 2 / 3 / 3;
     align-self: center;
     text-align: center;
     z-index: 1;
-
     h1 {
       font-size: 3rem;
       margin-bottom: 5px;
-
       span {
         display: block;
         text-align: center;
       }
     }
-
     h2 {
       margin-top: 1rem;
       font-size: 1.2rem;
@@ -220,12 +225,10 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-
   h2 {
     align-self: flex-start;
     margin-bottom: 2rem;
   }
-
   img {
     border: 3px solid $dgrey-border;
     border-radius: 50%;
@@ -233,7 +236,6 @@ nav {
     max-width: 100%;
     margin-bottom: 2rem;
   }
-
   p {
     color: $lgrey;
     width: 80%;
@@ -242,7 +244,6 @@ nav {
 
 #projects {
   padding-bottom: 35px;
-
   .carousel-cell {
     width: 75%;
     max-width: 400px;
@@ -251,7 +252,7 @@ nav {
     max-height: 610px;
     margin-right: 10px;
     padding: 1rem 2rem;
-    border: 4px solid $dgrey-border;
+    border: 2px solid $dgrey-border;
     border-radius: 10px;
     background: $mgrey;
     color: $lgrey;
@@ -260,12 +261,10 @@ nav {
     justify-content: flex-start;
     align-items: center;
     overflow: none;
-
     h3 {
       color: $dblue;
       margin-bottom: 1rem;
     }
-
     a.button {
       margin-top: 0.5rem;
       margin-bottom: 1rem;
@@ -277,19 +276,16 @@ nav {
       border: 2px solid $dgrey-border;
       border-radius: 10px;
       box-shadow: $shadow;
-
       &:hover {
         background-color: $lblue;
       }
     }
-
     img {
       max-width: 100%;
       max-height: 45%;
       box-shadow: $shadow;
       border-radius: 3px;
     }
-
     ul {
       display: none;
       list-style: none;
@@ -297,7 +293,6 @@ nav {
       align-items: center;
       margin-top: auto;
       width: 100%;
-
       i {
         color: #45a29e;
         font-size: 30px;
@@ -314,11 +309,9 @@ nav {
   h3 {
     margin-bottom: 0.5rem;
   }
-
   ul {
     margin-left: 20px;
     margin-bottom: 10px;
-
     li {
       color: $lgrey;
       line-height: 1.4rem;
@@ -328,36 +321,29 @@ nav {
 
 #contact {
   background-color: $dgrey;
-
   h2 {
     margin-bottom: 1rem;
   }
-
   ul {
     height: 90%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-
     li {
       display: inline-block;
       margin-bottom: 1rem;
-
       a i,
       span i {
         cursor: pointer;
         font-size: 3rem;
         color: $dblue;
-
         &:link {
           color: $dblue;
         }
-
         &:visited {
           color: $dblue;
         }
-
         &:hover {
           color: $lblue;
         }
@@ -371,36 +357,29 @@ nav {
     height: calc(100vh - 40px);
     scroll-snap-align: start;
   }
-
   h2 {
     font-size: 4vh;
   }
-
   h3 {
     font-size: 3vh;
   }
-
   p,
   li,
   #projects .carousel-cell a.button {
     font-size: 2vh;
     line-height: 3.2vh;
   }
-
   #skills ul li {
     line-height: 3.5vh;
   }
-
   #projects {
     padding-bottom: 20px;
     display: grid;
     grid-template-rows: 4vh 1fr 3vh;
-
     .carousel {
       align-self: center;
     }
   }
-
   #contact ul li {
     a i,
     span i {
@@ -419,18 +398,15 @@ nav {
   h2 {
     font-size: 36px;
   }
-
   h3 {
     font-size: 27px;
   }
-
   p,
   li,
   #projects .carousel-cell a.button {
     font-size: 18px;
     line-height: 29px;
   }
-
   #skills ul li {
     line-height: 32px;
   }
@@ -440,45 +416,35 @@ nav {
   h2 {
     text-align: center;
   }
-
   #about h2,
   #skills h2 {
     align-self: center;
   }
-
   #projects .carousel-cell ul i {
     font-size: 40px;
   }
-
   #contact ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-gap: 20px 20px;
-
     li {
       text-align: center;
-
       a i {
         font-size: 80px;
       }
-
       &:nth-of-type(1) {
         grid-area: 2 / 1 / 3 / 3;
       }
-
       &:nth-of-type(2) {
         grid-area: 2 / 3 / 3 / 5;
       }
-
       &:nth-of-type(3) {
         grid-area: 2 / 5 / 3 / 7;
       }
-
       &:nth-of-type(4) {
         grid-area: 3 / 2 / 4 / 4;
       }
-
       &:nth-of-type(5) {
         grid-area: 3 / 4 / 4 / 6;
       }
@@ -492,12 +458,10 @@ nav {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 80px 1fr 1fr 1fr 80px;
     justify-items: center;
-
     h2 {
       grid-area: 1 / 1 / 2 / 4;
       align-self: start;
     }
-
     .skill-list {
       grid-row: 3 / 4;
     }
@@ -514,18 +478,15 @@ nav {
   h2 {
     margin-top: 35px;
   }
-
   nav {
     display: block;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-
     #hamburger {
       display: none;
     }
-
     #nav-list {
       padding: 5px;
       background-color: $dgrey;
@@ -535,23 +496,19 @@ nav {
       justify-content: flex-end;
       align-items: flex-start;
       height: auto;
-
       li {
         margin: 0.5rem 2rem;
       }
     }
   }
-
   #about {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 80px 1fr 80px;
-
     h2 {
       grid-area: 1 / 1 / 2 / 4;
       align-self: stretch;
     }
-
     p {
       font-size: 1.3rem;
       font-weight: 300;
@@ -559,7 +516,6 @@ nav {
       margin-left: 50px;
       max-width: 550px;
     }
-
     img {
       justify-self: end;
       height: 80%;
@@ -569,7 +525,6 @@ nav {
       margin-right: 50px;
     }
   }
-
   #projects {
     .carousel-cell {
       max-width: 700px;
@@ -580,48 +535,42 @@ nav {
       justify-items: center;
       align-items: start;
       grid-row-gap: 1em;
-
       h3 {
         grid-area: 1 / 1 / 2 / 4;
         margin-bottom: 0;
       }
-
       p {
         grid-area: 3 / 1 / 4 / 2;
         font-size: 18px;
         font-weight: 300;
       }
-
       a.button {
         grid-area: 2 / 1 / 3 / 3;
         margin-top: 0;
       }
-
       img {
         grid-area: 3 / 2 / 4 / 3;
         margin-top: 0;
         max-width: 80%;
         max-height: 100%;
       }
-
       ul {
         display: flex;
         grid-area: 4 / 1 / 5 / 4;
       }
     }
   }
-
   #skills {
     li {
       font-size: 18px;
     }
   }
-
   #contact {
     ul {
       display: flex;
       flex-direction: row;
-
+      max-width: 1000px;
+      margin: 0 auto;
       li a i {
         font-size: 100px;
       }
@@ -634,29 +583,36 @@ html.can-touch {
   a:hover {
     color: $dblue;
   }
-
   #hamburger:hover span,
   #projects a.button:hover {
     background-color: $dblue;
   }
-
   .flickity-button:hover {
     background: transparent;
   }
 }
 
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 999; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 999;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/ opacity */
 }
 
 .project-image {
@@ -666,12 +622,11 @@ html.can-touch {
 }
 
 .project-image:hover {
-  transform: scale(1.05);
-  // opacity: 0.7;
+  transform: scale(1.05); // opacity: 0.7;
 }
 
-
 /* Modal Content (image) */
+
 .modal-content {
   margin: auto;
   display: block;
@@ -680,6 +635,7 @@ html.can-touch {
 }
 
 /* Caption of Modal Image */
+
 #modal-caption {
   margin: auto;
   display: block;
@@ -692,17 +648,24 @@ html.can-touch {
 }
 
 /* Add Animation */
-.modal-content, #modal-caption {
+
+.modal-content,
+#modal-caption {
   animation-name: zoom;
   animation-duration: 0.4s;
 }
 
 @keyframes zoom {
-  from {transform:scale(0)}
-  to {transform:scale(1)}
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 /* The Close Button */
+
 .close {
   position: absolute;
   top: 15px;
@@ -721,8 +684,9 @@ html.can-touch {
 }
 
 /* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
+
+@media only screen and (max-width: 700px) {
   .modal-content {
-      width: 100%;
+    width: 100%;
   }
 }
